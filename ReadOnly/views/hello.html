@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link rel="stylesheet" src="stylesheets/style.css"/>
+        <script src="javascripts/require.js"></script>
+        <script>
+            require.config({
+                baseUrl: "/",
+                paths: {
+                    "react": "react/dist/react",
+                    "react-dom": "react-dom/dist/react-dom",
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Title1</h1>
+        <div id="hello"></div>
+    </body>
+    
+    <script>
+        require(["javascripts/hello", 'react', 'react-dom'],function(Hello, React, ReactDom) {
+                var helloWorldComponent = ReactDom.render(Hello({name:"Patrick"}), document.getElementById('hello'));
+            }
+        );
+    </script>
+</html>

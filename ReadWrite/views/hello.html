@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" src="stylesheets/style.css"/>
+        <script src="javascripts/require.js"></script>
+        <script>
+            require.config({
+                baseUrl: "/",
+                paths: {
+                    "react": "react/dist/react",
+                    "react-dom": "react-dom/dist/react-dom",
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Example 3 (Repaint)</h1>
+        <div id="hello"></div>
+    </body>
+    
+    <script>
+        require(["javascripts/helloapp", 'react', 'react-dom'],function(Hello, React, ReactDom) {
+                var username= "World";//This is the example "store" which is a single value
+                var onNameChange = function(e)
+                {
+                     username = e;
+                     renderApp();
+                }
+                
+                var renderApp = function(){
+                var app = React.createElement(Hello.HelloApp, {name:username, onNameChange:e=>onNameChange(e)});
+                ReactDom.render(app, document.getElementById('hello'));
+                };
+                
+                renderApp();
+            }
+        );
+    </script>
+</html>

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": 
+    {
+    "target": "ES6",
+    "module": "amd",
+    "sourceMap": true,
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true
+    }
+}
